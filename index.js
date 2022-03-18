@@ -1,6 +1,7 @@
 var fs = require('fs');
 var Midi = require('jsmidgen');
 const { exit } = require('process');
+const { takeCoverage } = require('v8');
 
 const args = process.argv.slice(2)
 
@@ -178,12 +179,18 @@ try {
 
   //Componente para uma nota
   for (let i = 0; i != dataNormalize.length; i++) {
-    track.instrument(0, instruments[dataNormalize[i][1]]);
-    track.addNote(0, notes[dataNormalize[i][0]], noteDuration[dataNormalize[i][2]], noteDuration[dataNormalize[i][2]]);
+    track.instrument(0, 0x01)
+    track.addNoteOn(0, notes[dataNormalize[i][0]], noteDuration[dataNormalize[i][2]]);
+    track.instrument(0, 0x12);
+    track.addNoteOn(0, notes[dataNormalize[i][1]]);
+
+    track.addNoteOff(0, notes[dataNormalize[i][0]], noteDuration[dataNormalize[i][2]]);
+    track.addNoteOff(0, notes[dataNormalize[i][1]])
   }
 
+  console.log(outFimeName)
   //Escreve a track no ficheiro MiDI
-  fs.writeFileSync(outFimeName + ".mid", file.toBytes(), 'binary');
+  fs.writeFileSync(outFimeName + ".midi", file.toBytes(), 'binary');
 } catch (err) {
   console.error(err)
 }
