@@ -24,7 +24,7 @@ Each file can contain only one variable and all the files must have the same num
 
 The VarFiles are mapped to specific sound characteristics. The Var1 and Var2 are mapped to instruments and Var3 is mapped to notes duration.
 
-#Examples 
+# Examples 
 
 This repo also contains examples of sonified data.
 
