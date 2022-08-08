@@ -13,6 +13,8 @@ To run this project run the following commands:
 
 ### npm start OUTFILENAME MINPERCENTAGE MAXPERCENTAGE VAR1FILENAME [VAR2FILENAME [VER3FILENAME]]
 
+OUTFILENAME is the name of the created midi file.
+
 Minpercentage and Maxpercentage are the beginning and end of the used data. 
 For example, if you only want to use the initial 25% of the data you can start the program with:
 
