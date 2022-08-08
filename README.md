@@ -1,17 +1,17 @@
-#Sonification
+# Sonification
 
 This is a simple JavaScript that uses CSV file containing a variable and transform it into sound. 
 To do this the information is normalized and mapped to an instrument or the duration of the notes.
 
 This uses the jsmidgen (https://www.npmjs.com/package/jsmidgen) to transform the normalized data into a midi file.
 
-#Run
+# Run
 
 To run this project run the following commands:
 
-## npm install
+### npm install
 
-## npm start OUTFILENAME MINPERCENTAGE MAXPERCENTAGE VAR1FILENAME [VAR2FILENAME [VER3FILENAME]]
+### npm start OUTFILENAME MINPERCENTAGE MAXPERCENTAGE VAR1FILENAME [VAR2FILENAME [VER3FILENAME]]
 
 Minpercentage and Maxpercentage are the beginning and end of the used data. 
 For example, if you only want to use the initial 25% of the data you can start the program with:
